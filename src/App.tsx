@@ -277,7 +277,7 @@ export default function App() {
             <a href="#/rooms" aria-current={route === '/rooms' ? 'page' : undefined}>How it works</a>
             <a href="#/pricing" aria-current={route === '/pricing' ? 'page' : undefined}>Pricing</a>
             <a href="#/rooms#trust">Security</a>
-            <a href="blog.html">Blog</a>
+            <a href="/blog/">Blog</a>
           </nav>
           <div className="nav-right">
             <a className="txt" href="#/pricing">Log in</a>
@@ -1419,7 +1419,7 @@ room.confidence `}<span style={{ color: 'var(--ink-4)' }}>→</span> 0.91
             </div>
             <div>
               <h5>Resources</h5>
-              <a href="blog.html">Blog</a>
+              <a href="/blog/">Blog</a>
               <a href="#/rooms">How it works</a>
               <a href="#/pricing">Pricing</a>
               <a href="#/rooms#trust">Security</a>
