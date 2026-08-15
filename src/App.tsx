@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
+import fullLogo from './assets/full-black-flolyt-logo.svg';
+import iconLogo from './assets/dark-logo.svg';
 
 export default function App() {
   const [route, setRoute] = useState('/');
@@ -269,8 +271,8 @@ export default function App() {
       <header className={`nav ${stuck ? 'stuck' : ''}`} id="nav">
         <div className="nav-in">
           <a className="logo" href="#/" aria-label="Flolyt home">
-            <img src="/src/assets/full-black-flolyt-logo.svg" alt="Flolyt" className="logo-full" />
-            <img src="/src/assets/dark-logo.svg" alt="Flolyt" className="logo-icon" />
+            <img src={fullLogo} alt="Flolyt" className="logo-full" />
+            <img src={iconLogo} alt="Flolyt" className="logo-icon" />
           </a>
           <nav className={`nav-links ${mobileMenuOpen ? 'open' : ''}`} id="navlinks">
             <a href="#/" aria-current={route === '/' ? 'page' : undefined}>Platform</a>
@@ -419,7 +421,7 @@ export default function App() {
                 <span className="stack ag"><span className="av">RD</span><span className="av">DQ</span></span>
                 <span className="ftk" style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                   <img
-                    src="/src/assets/dark-logo.svg"
+                    src={iconLogo}
                     alt=""
                     style={{ width: '12px', height: '12px' }}
                   />
@@ -1396,8 +1398,8 @@ room.confidence `}<span style={{ color: 'var(--ink-4)' }}>→</span> 0.91
           <div className="fgrid">
             <div>
               <a className="logo" href="#/" style={{ marginBottom: '14px' }}>
-                <img src="/src/assets/full-black-flolyt-logo.svg" alt="Flolyt" className="logo-full" />
-                <img src="/src/assets/dark-logo.svg" alt="Flolyt" className="logo-icon" />
+                <img src={fullLogo} alt="Flolyt" className="logo-full" />
+                <img src={iconLogo} alt="Flolyt" className="logo-icon" />
               </a>
               <p className="sm" style={{ maxWidth: '32ch' }}>The collaborative revenue intelligence workspace. Ask why. Fix it. Together.</p>
             </div>
