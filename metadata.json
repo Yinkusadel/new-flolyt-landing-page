@@ -1,0 +1,6 @@
+{
+  "name": "Flolyt",
+  "description": "Turn revenue data into decisions your team acts on. Flolyt connects your live data to AI agents and shared rooms that find, explain, and close revenue leaks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
