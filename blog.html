@@ -54,6 +54,9 @@ h1,h2,h3,h4,h5{margin:0;font-family:var(--f-d);font-weight:600;letter-spacing:-.
 .nav.stuck{border-bottom-color:var(--line)}
 .nav-in{display:flex;align-items:center;gap:34px;height:70px;max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
 .logo{display:flex;align-items:center;gap:9px;font-family:var(--f-d);font-size:21px;font-weight:600;letter-spacing:-.045em}
+.logo-full{display:block;height:22px;width:auto}
+.logo-icon{display:none;height:22px;width:auto}
+footer .logo-full,footer .logo-icon{filter:brightness(0) invert(1)}
 .nav-links{display:flex;gap:26px;font-size:15.5px;color:var(--ink-2);margin-left:6px}
 .nav-links a{padding:6px 0;transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
@@ -179,6 +182,8 @@ footer .sm{color:rgba(255,255,255,.55)}
 @media(max-width:720px){
   body{font-size:16.5px}
   .grid-3{grid-template-columns:1fr}
+  .logo-full{display:none}
+  .logo-icon{display:block}
   .nav-links{display:none}
   .nav-links.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:6px var(--gut) 16px}
   .nav-links.open a{padding:13px 0;border-bottom:1px solid var(--line)}
@@ -195,22 +200,21 @@ footer .sm{color:rgba(255,255,255,.55)}
 
 <header class="nav" id="nav">
   <div class="nav-in">
-    <a class="logo" href="flolyt-website__12_.html#/" aria-label="Flolyt home">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 5h18M3 12h12M3 19h7" stroke="#4C5FD5" stroke-width="2.4" stroke-linecap="round"/>
-        <circle cx="19.5" cy="19" r="3" fill="#12857E"/>
-      </svg>Flolyt
+    <a class="logo" href="index.html#/" aria-label="Flolyt home">
+      <img src="/src/assets/full-black-flolyt-logo.svg" alt="Flolyt" class="logo-full">
+      <img src="/src/assets/dark-logo.svg" alt="Flolyt" class="logo-icon">
     </a>
     <nav class="nav-links" id="navlinks">
-      <a href="flolyt-website__12_.html#/">Platform</a>
-      <a href="flolyt-website__12_.html#/rooms">How it works</a>
-      <a href="flolyt-website__12_.html#/pricing">Pricing</a>
+      <a href="index.html#/">Platform</a>
+      <a href="index.html#/rooms">How it works</a>
+      <a href="index.html#/pricing">Pricing</a>
+      <a href="index.html#/rooms#trust">Security</a>
       <a href="blog.html" aria-current="page">Blog</a>
     </nav>
     <div class="nav-right">
-      <a class="txt" href="flolyt-website__12_.html#/pricing">Log in</a>
-      <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk to sales</a>
-      <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
+      <a class="txt" href="index.html#/pricing">Log in</a>
+      <a class="btn btn-line" href="index.html#contact">Talk to sales</a>
+      <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
         <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 1h14M1 6h14M1 11h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>
@@ -680,8 +684,8 @@ Usually a revenue or growth lead, with marketing, product, support and finance a
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -845,8 +849,8 @@ Because a single number hides which segment or market is actually leaking. We br
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -987,8 +991,8 @@ Because a single number hides which segment or market is actually leaking. We br
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -1156,8 +1160,8 @@ Because a single number hides which segment or market is actually leaking. We br
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -1304,8 +1308,8 @@ Because a single number hides which segment or market is actually leaking. We br
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -1438,8 +1442,8 @@ Because a single number hides which segment or market is actually leaking. We br
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -1643,8 +1647,8 @@ All the major ones work. Warehouse-native setups tend to be simplest because we 
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -1778,8 +1782,8 @@ All the major ones work. Warehouse-native setups tend to be simplest because we 
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -2033,8 +2037,8 @@ Substantial for any engagement platform: SDK reimplementation, data model mappin
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -2183,8 +2187,8 @@ Substantial for any engagement platform: SDK reimplementation, data model mappin
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -2362,8 +2366,8 @@ Discounted-cohort customers still discounted at 24 months
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -2568,8 +2572,8 @@ The honest answer is "we compare before and after, flag confounders, and call it
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -2791,8 +2795,8 @@ Renew first — splitting voluntary from involuntary churn is one-time work with
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -2992,8 +2996,8 @@ Refunded customers who never returned
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -3129,8 +3133,8 @@ Refunded customers who never returned
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -3316,8 +3320,8 @@ Plus: customers who hit the same issue and never contacted you.
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -3478,8 +3482,8 @@ Then keep doing that for coordination. The question is whether you can answer, f
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -3610,8 +3614,8 @@ Then keep doing that for coordination. The question is whether you can answer, f
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -3847,8 +3851,8 @@ If your CS team is functioning and your problem is that churn causes live outsid
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -3982,8 +3986,8 @@ If your CS team is functioning and your problem is that churn causes live outsid
         <p class="sm" style="margin:8px 0 0">Connect one source and see your first leak with a number attached. Free under $500K in revenue, priced per company after that — never per seat.</p>
       </div>
       <div class="cta-btns">
-        <a class="btn btn-dark" href="flolyt-website__12_.html#/pricing">Start for free</a>
-        <a class="btn btn-line" href="flolyt-website__12_.html#contact">Talk with our team</a>
+        <a class="btn btn-dark" href="index.html#/pricing">Start for free</a>
+        <a class="btn btn-line" href="index.html#contact">Talk with our team</a>
       </div>
     </div>
     <div class="rel">
@@ -4064,18 +4068,16 @@ If your CS team is functioning and your problem is that churn causes live outsid
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <a class="logo" href="flolyt-website__12_.html#/" style="margin-bottom:14px">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M3 5h18M3 12h12M3 19h7" stroke="#4C5FD5" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="19.5" cy="19" r="3" fill="#12857E"/>
-          </svg>Flolyt
+        <a class="logo" href="index.html#/" style="margin-bottom:14px">
+          <img src="/src/assets/full-black-flolyt-logo.svg" alt="Flolyt" class="logo-full">
+          <img src="/src/assets/dark-logo.svg" alt="Flolyt" class="logo-icon">
         </a>
         <p class="sm" style="max-width:32ch">The collaborative revenue intelligence workspace. Ask why. Fix it. Together.</p>
       </div>
-      <div><h5>Platform</h5><a href="flolyt-website__12_.html#/">Rooms</a><a href="flolyt-website__12_.html#/">Leakage map</a><a href="flolyt-website__12_.html#/">AI agents</a><a href="flolyt-website__12_.html#/">Business memory</a><a href="flolyt-website__12_.html#/">Data fabric</a></div>
-      <div><h5>Solutions</h5><a href="flolyt-website__12_.html#/">E-commerce</a><a href="flolyt-website__12_.html#/">B2B SaaS</a><a href="flolyt-website__12_.html#/">Subscriptions</a><a href="flolyt-website__12_.html#/">Marketplaces</a><a href="flolyt-website__12_.html#/">Fintech</a></div>
-      <div><h5>Resources</h5><a href="blog.html">Blog</a><a href="flolyt-website__12_.html#/rooms">How it works</a><a href="flolyt-website__12_.html#/pricing">Pricing</a><a href="flolyt-website__12_.html#/rooms#trust">Security</a><a href="flolyt-website__12_.html#/">API docs</a></div>
-      <div><h5>Company</h5><a href="flolyt-website__12_.html#contact">Contact</a><a href="flolyt-website__12_.html#/">Careers</a><a href="flolyt-website__12_.html#/">Trust centre</a></div>
+      <div><h5>Platform</h5><a href="index.html#/">Rooms</a><a href="index.html#/">Leakage map</a><a href="index.html#/">AI agents</a><a href="index.html#/">Business memory</a><a href="index.html#/">Data fabric</a></div>
+      <div><h5>Solutions</h5><a href="index.html#/">E-commerce</a><a href="index.html#/">B2B SaaS</a><a href="index.html#/">Subscriptions</a><a href="index.html#/">Marketplaces</a><a href="index.html#/">Fintech</a></div>
+      <div><h5>Resources</h5><a href="blog.html">Blog</a><a href="index.html#/rooms">How it works</a><a href="index.html#/pricing">Pricing</a><a href="index.html#/rooms#trust">Security</a><a href="index.html#/">API docs</a></div>
+      <div><h5>Company</h5><a href="index.html#contact">Contact</a><a href="index.html#/">Careers</a><a href="index.html#/">Trust centre</a></div>
     </div>
     <div class="fbtm">
       <span>© 2026 Flolyt Inc.</span>
