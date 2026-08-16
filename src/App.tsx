@@ -17,6 +17,8 @@ export default function App() {
   // Form handling
   const [formData, setFormData] = useState({ fn: '', ln: '', em: '', co: '', rv2: 'Under $500K' });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formSubmitting, setFormSubmitting] = useState(false);
+  const [formError, setFormError] = useState(false);
 
   // Intersection Observer for scroll animations
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -240,15 +242,39 @@ export default function App() {
     }, prefersReducedMotion ? 0 : 1700);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { fn, ln, em, co } = formData;
+    const { fn, ln, em, co, rv2 } = formData;
     if (!fn.trim() || !ln.trim() || !em.trim() || !co.trim()) {
       const firstEmptyField = !fn.trim() ? 'fn' : !ln.trim() ? 'ln' : !em.trim() ? 'em' : 'co';
       document.getElementById(firstEmptyField)?.focus();
       return;
     }
-    setFormSubmitted(true);
+    setFormError(false);
+    setFormSubmitting(true);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          subject: `Talk to our team: ${co}`,
+          from_name: `${fn} ${ln}`,
+          first_name: fn,
+          last_name: ln,
+          email: em,
+          company: co,
+          annual_revenue: rv2,
+        }),
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message || 'Submission failed');
+      setFormSubmitted(true);
+    } catch {
+      setFormError(true);
+    } finally {
+      setFormSubmitting(false);
+    }
   };
 
   const handleScrollToStep = (id: string, e: React.MouseEvent) => {
@@ -1006,10 +1032,15 @@ room.confidence `}<span style={{ color: 'var(--ink-4)' }}>→</span> 0.91
                     </select>
                   </div>
                 </div>
-                <button className="btn btn-dark" type="submit" style={{ width: '100%', marginTop: '6px' }}>
-                  {formSubmitted ? 'Sent' : 'Talk with our team'}
+                <button className="btn btn-dark" type="submit" disabled={formSubmitting || formSubmitted} style={{ width: '100%', marginTop: '6px' }}>
+                  {formSubmitted ? 'Sent' : formSubmitting ? 'Sending…' : 'Talk with our team'}
                 </button>
                 <p className="fnote">By submitting this form, you confirm you have read Flolyt{"’"}s privacy statement. We reply within one business day.</p>
+                {formError && (
+                  <div className="ok show" id="errmsg" style={{ color: '#CE3F51' }}>
+                    Something went wrong. Please try again, or email us directly.
+                  </div>
+                )}
                 <div className={`ok ${formSubmitted ? 'show' : ''}`} id="okmsg">
                   Thanks. A member of our team will be in touch within one business day.
                 </div>
