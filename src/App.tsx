@@ -2,6 +2,31 @@ import React, { useEffect, useState, useRef } from 'react';
 import fullLogo from './assets/full-black-flolyt-logo.svg';
 import iconLogo from './assets/dark-logo.svg';
 
+const EMAIL_FORMAT_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const PERSONAL_EMAIL_DOMAINS = new Set([
+  'gmail.com', 'googlemail.com', 'yahoo.com', 'yahoo.co.uk', 'yahoo.ca', 'yahoo.fr',
+  'yahoo.de', 'yahoo.in', 'ymail.com', 'rocketmail.com', 'outlook.com', 'outlook.co.uk',
+  'hotmail.com', 'hotmail.co.uk', 'hotmail.fr', 'live.com', 'live.co.uk', 'msn.com',
+  'icloud.com', 'me.com', 'mac.com', 'aol.com', 'aim.com', 'mail.com', 'gmx.com',
+  'gmx.net', 'protonmail.com', 'proton.me', 'pm.me', 'zoho.com', 'yandex.com',
+  'yandex.ru', 'inbox.com', 'fastmail.com', 'tutanota.com', 'qq.com', '163.com',
+  '126.com', 'comcast.net', 'verizon.net', 'att.net', 'sbcglobal.net', 'bellsouth.net',
+  'cox.net', 'charter.net', 'earthlink.net', 'web.de', 'naver.com', 'daum.net', 'yupmail.com',
+]);
+
+function getWorkEmailError(rawEmail: string): string {
+  const email = rawEmail.trim();
+  if (!EMAIL_FORMAT_RE.test(email)) {
+    return 'Enter a valid email address.';
+  }
+  const domain = email.split('@')[1]?.toLowerCase();
+  if (domain && PERSONAL_EMAIL_DOMAINS.has(domain)) {
+    return 'Please use your work email address, not a personal one.';
+  }
+  return '';
+}
+
 export default function App() {
   const [route, setRoute] = useState('/');
   const [stuck, setStuck] = useState(false);
@@ -19,6 +44,7 @@ export default function App() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formError, setFormError] = useState(false);
+  const [emailError, setEmailError] = useState('');
 
   // Intersection Observer for scroll animations
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -250,6 +276,13 @@ export default function App() {
       document.getElementById(firstEmptyField)?.focus();
       return;
     }
+    const workEmailError = getWorkEmailError(em);
+    if (workEmailError) {
+      setEmailError(workEmailError);
+      document.getElementById('em')?.focus();
+      return;
+    }
+    setEmailError('');
     setFormError(false);
     setFormSubmitting(true);
     try {
@@ -997,14 +1030,22 @@ room.confidence `}<span style={{ color: 'var(--ink-4)' }}>→</span> 0.91
                 </div>
                 <div className="full">
                   <label htmlFor="em">Work email</label>
-                  <input 
-                    id="em" 
-                    type="email" 
-                    placeholder="ada@company.com" 
-                    required 
+                  <input
+                    id="em"
+                    type="email"
+                    placeholder="ada@company.com"
+                    required
+                    aria-invalid={emailError ? 'true' : 'false'}
+                    style={emailError ? { borderColor: '#CE3F51' } : undefined}
                     value={formData.em}
-                    onChange={(e) => setFormData({ ...formData, em: e.target.value })}
+                    onChange={(e) => {
+                      setFormData({ ...formData, em: e.target.value });
+                      if (emailError) setEmailError('');
+                    }}
                   />
+                  {emailError && (
+                    <div style={{ color: '#CE3F51', fontSize: '12.5px', marginTop: '6px' }}>{emailError}</div>
+                  )}
                 </div>
                 <div className="fr">
                   <div>
