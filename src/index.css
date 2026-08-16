@@ -649,6 +649,15 @@ h1, h2, h3, h4, h5 {
   animation: evi .5s cubic-bezier(.2, .8, .2, 1) forwards;
 }
 
+/* Tab-panel evidence rows are statically visible, not scroll-triggered,
+   so they must not depend on the `.in` class surviving the global
+   scroll-reveal reset in App.tsx (which strips `.in` from every element
+   on mount, regardless of where it came from). */
+.panel .ev {
+  opacity: 1;
+  transform: none;
+}
+
 @keyframes evi {
   to {
     opacity: 1;
