@@ -338,12 +338,15 @@ export default function App() {
             <a href="#/rooms" aria-current={route === '/rooms' ? 'page' : undefined}>How it works</a>
             <a href="#/pricing" aria-current={route === '/pricing' ? 'page' : undefined}>Pricing</a>
             <a href="/blog/">Blog</a>
+            <div className="nav-actions">
+              <a className="txt" href="#/pricing">Log in</a>
+              <a className="btn btn-line" href="#contact">Talk to sales</a>
+            </div>
           </nav>
           <div className="nav-right">
             <a className="txt" href="#/pricing">Log in</a>
             <a className="btn btn-line" href="#contact">Talk to sales</a>
-            <a className="btn btn-dark" href="#/pricing">Start for free</a>
-            <button 
+            <button
               className="burger" 
               id="burger" 
               aria-label="Menu" 

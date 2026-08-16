@@ -259,6 +259,10 @@ h1, h2, h3, h4, h5 {
   font-weight: 500;
 }
 
+.nav-actions {
+  display: none;
+}
+
 .nav-right {
   margin-left: auto;
   display: flex;
@@ -1737,15 +1741,9 @@ footer {
   }
 }
 
-@media (max-width: 760px) {
-  body {
-    font-size: 16px;
-  }
+@media (max-width: 900px) {
   .logo-full {
-    display: none;
-  }
-  .logo-icon {
-    display: block;
+    height: 32px;
   }
   .nav-links {
     display: none;
@@ -1753,24 +1751,67 @@ footer {
   .nav-links.open {
     display: flex;
     position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
+    top: 100%;
+    right: var(--gut);
+    margin-top: 10px;
     flex-direction: column;
-    gap: 0;
+    gap: 2px;
+    width: min(300px, calc(100vw - 2 * var(--gut)));
     background: #fff;
-    border-bottom: 1px solid var(--line);
-    padding: 6px var(--gut) 16px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 20px 44px -16px rgba(11, 13, 20, .22), 0 4px 14px -6px rgba(11, 13, 20, .08);
+    padding: 8px;
+    animation: navMenu .16s cubic-bezier(.2, .8, .2, 1);
   }
   .nav-links.open a {
-    padding: 13px 0;
-    border-bottom: 1px solid var(--line);
+    padding: 11px 12px;
+    border-radius: 10px;
+    transition: background .15s, color .15s;
+  }
+  .nav-links.open a:hover {
+    background: var(--line);
+  }
+  .nav-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 6px;
+    padding: 12px 12px 4px;
+    border-top: 1px solid var(--line);
+  }
+  .nav-actions .txt {
+    padding: 11px 12px;
+    border-radius: 10px;
+  }
+  .nav-actions .txt:hover {
+    background: var(--line);
+  }
+  .nav-actions .btn {
+    width: 100%;
   }
   .burger {
     display: grid;
   }
   .nav-right .txt, .nav-right .btn-line {
     display: none;
+  }
+}
+
+@keyframes navMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 16px;
   }
   .room-bar {
     font-size: 10.5px;
