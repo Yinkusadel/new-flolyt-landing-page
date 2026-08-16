@@ -225,7 +225,7 @@ h1, h2, h3, h4, h5 {
 
 .logo-full {
   display: block;
-  height: 22px;
+  height: 26px;
   width: auto;
 }
 
@@ -461,7 +461,7 @@ h1, h2, h3, h4, h5 {
   display: grid;
   grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr);
   gap: clamp(30px, 4.2vw, 56px);
-  align-items: center;
+  align-items: start;
 }
 
 .hero h1 {

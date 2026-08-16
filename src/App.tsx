@@ -307,7 +307,7 @@ export default function App() {
           <div className="wrap hero-grid">
             <div>
               <h1 className="d1 rv">Turn revenue data into decisions your team acts on</h1>
-              <p className="lede rv r1">Connect your live data to AI agents and shared rooms that find, explain, and close revenue leaks.</p>
+              <p className="lede rv r1">We provide a shared workspace where your teams and multiple AI agents collaborate in real-time to identify, diagnose, and fix revenue leaks.</p>
               <div className="hero-cta rv r2">
                 <a className="btn btn-dark btn-lg" href="#/pricing">Start for free</a>
                 <a className="btn btn-line btn-lg" href="#contact">Talk with our team</a>
