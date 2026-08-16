@@ -304,7 +304,6 @@ export default function App() {
             <a href="#/" aria-current={route === '/' ? 'page' : undefined}>Platform</a>
             <a href="#/rooms" aria-current={route === '/rooms' ? 'page' : undefined}>How it works</a>
             <a href="#/pricing" aria-current={route === '/pricing' ? 'page' : undefined}>Pricing</a>
-            <a href="#/rooms#trust">Security</a>
             <a href="/blog/">Blog</a>
           </nav>
           <div className="nav-right">
@@ -331,7 +330,7 @@ export default function App() {
         <section className="hero">
           <div className="holo"></div>
           <div className="wrap hero-grid">
-            <div>
+            <div className="hero-copy">
               <h1 className="d1 rv">Turn revenue data into decisions your team acts on</h1>
               <p className="lede rv r1">We provide a shared workspace where your teams and multiple AI agents collaborate in real-time to identify, diagnose, and fix revenue leaks.</p>
               <div className="hero-cta rv r2">

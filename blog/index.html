@@ -52,12 +52,12 @@ h1,h2,h3,h4,h5{margin:0;font-family:var(--f-d);font-weight:600;letter-spacing:-.
 /* nav — matches the marketing site */
 .nav{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .25s}
 .nav.stuck{border-bottom-color:var(--line)}
-.nav-in{display:flex;align-items:center;gap:34px;height:70px;max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.nav-in{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:34px;height:70px;max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
 .logo{display:flex;align-items:center;gap:9px;font-family:var(--f-d);font-size:21px;font-weight:600;letter-spacing:-.045em}
 .logo-full{display:block;height:26px;width:auto}
 .logo-icon{display:none;height:22px;width:auto}
 footer .logo-full,footer .logo-icon{filter:brightness(0) invert(1)}
-.nav-links{display:flex;gap:26px;font-size:15.5px;color:var(--ink-2);margin-left:6px}
+.nav-links{display:flex;justify-self:center;gap:26px;font-size:15.5px;color:var(--ink-2)}
 .nav-links a{padding:6px 0;transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
 .nav-links a[aria-current="page"]{color:var(--ink);font-weight:500}
@@ -77,7 +77,7 @@ footer .logo-full,footer .logo-icon{filter:brightness(0) invert(1)}
 .mast .lede{margin-top:16px}
 
 /* filter pills */
-.filters{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:clamp(28px,3.4vw,44px);border-bottom:1px solid var(--line)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-left:-16px;padding-bottom:clamp(28px,3.4vw,44px);border-bottom:1px solid var(--line)}
 .fpill{padding:8px 15px;border-radius:999px;border:1px solid var(--line-2);font-size:14.5px;color:var(--ink-2);background:#fff;transition:.16s}
 .fpill:hover{border-color:var(--ink-3);color:var(--ink)}
 .fpill.is-on{background:var(--ink);border-color:var(--ink);color:#fff}
@@ -208,7 +208,6 @@ footer .sm{color:rgba(255,255,255,.55)}
       <a href="/index.html#/">Platform</a>
       <a href="/index.html#/rooms">How it works</a>
       <a href="/index.html#/pricing">Pricing</a>
-      <a href="/index.html#/rooms#trust">Security</a>
       <a href="/blog/" aria-current="page">Blog</a>
     </nav>
     <div class="nav-right">

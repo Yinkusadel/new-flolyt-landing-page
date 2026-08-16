@@ -204,7 +204,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .nav-in {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 34px;
   height: 70px;
@@ -237,10 +238,10 @@ h1, h2, h3, h4, h5 {
 
 .nav-links {
   display: flex;
+  justify-self: center;
   gap: 26px;
   font-size: 15.5px;
   color: var(--ink-2);
-  margin-left: 6px;
 }
 
 .nav-links a {
@@ -462,6 +463,10 @@ h1, h2, h3, h4, h5 {
   grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr);
   gap: clamp(30px, 4.2vw, 56px);
   align-items: start;
+}
+
+.hero-copy {
+  margin-top: 58px;
 }
 
 .hero h1 {
@@ -1675,6 +1680,9 @@ footer {
 @media (max-width: 1040px) {
   .hero-grid, .two, .panel.on, .final {
     grid-template-columns: 1fr;
+  }
+  .hero-copy {
+    margin-top: 0;
   }
   .cards {
     grid-template-columns: repeat(4, 1fr);
