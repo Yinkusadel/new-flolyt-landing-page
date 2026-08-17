@@ -64,6 +64,7 @@ footer .logo-full,footer .logo-icon{filter:brightness(0) invert(1)}
 .nav-right{margin-left:auto;display:flex;align-items:center;gap:8px}
 .nav-right .txt{font-size:15.5px;color:var(--ink-2);padding:8px 10px}
 .burger{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:10px;place-items:center}
+.nav-actions{display:none}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border-radius:999px;font-family:var(--f-b);font-size:15.5px;font-weight:500;border:1px solid transparent;transition:background .18s,color .18s,border-color .18s,transform .18s,box-shadow .18s;white-space:nowrap}
 .btn:hover{transform:translateY(-1px)}
@@ -179,16 +180,23 @@ footer .sm{color:rgba(255,255,255,.55)}
   .feat{grid-template-columns:1fr}
   .fgrid{grid-template-columns:1fr 1fr;gap:28px}
 }
+@media(max-width:900px){
+  .logo-full{height:32px}
+  .nav-links{display:none}
+  .nav-links.open{display:flex;position:absolute;top:100%;right:var(--gut);margin-top:10px;flex-direction:column;gap:2px;width:min(300px,calc(100vw - 2 * var(--gut)));background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 44px -16px rgba(11,13,20,.22),0 4px 14px -6px rgba(11,13,20,.08);padding:8px;animation:navMenu .16s cubic-bezier(.2,.8,.2,1)}
+  .nav-links.open a{padding:11px 12px;border-radius:10px;transition:background .15s,color .15s}
+  .nav-links.open a:hover{background:var(--line)}
+  .nav-actions{display:flex;flex-direction:column;gap:8px;margin-top:6px;padding:12px 12px 4px;border-top:1px solid var(--line)}
+  .nav-actions .txt{padding:11px 12px;border-radius:10px}
+  .nav-actions .txt:hover{background:var(--line)}
+  .nav-actions .btn{width:100%}
+  .burger{display:grid}
+  .nav-right .txt,.nav-right .btn-line{display:none}
+}
+@keyframes navMenu{from{opacity:0;transform:translateY(-6px) scale(.98)}to{opacity:1;transform:none}}
 @media(max-width:720px){
   body{font-size:16.5px}
   .grid-3{grid-template-columns:1fr}
-  .logo-full{display:none}
-  .logo-icon{display:block}
-  .nav-links{display:none}
-  .nav-links.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:6px var(--gut) 16px}
-  .nav-links.open a{padding:13px 0;border-bottom:1px solid var(--line)}
-  .burger{display:grid}
-  .nav-right .txt,.nav-right .btn-line{display:none}
   .prose{font-size:17px}
   .prose table{display:block;overflow-x:auto;white-space:nowrap}
   .cta-card{flex-direction:column;align-items:flex-start}
@@ -209,11 +217,14 @@ footer .sm{color:rgba(255,255,255,.55)}
       <a href="/index.html#/rooms">How it works</a>
       <a href="/index.html#/pricing">Pricing</a>
       <a href="/blog/" aria-current="page">Blog</a>
+      <div class="nav-actions">
+        <a class="txt" href="/index.html#/pricing">Log in</a>
+        <a class="btn btn-line" href="/index.html#contact">Talk to sales</a>
+      </div>
     </nav>
     <div class="nav-right">
       <a class="txt" href="/index.html#/pricing">Log in</a>
       <a class="btn btn-line" href="/index.html#contact">Talk to sales</a>
-      <a class="btn btn-dark" href="/index.html#/pricing">Start for free</a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
         <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 1h14M1 6h14M1 11h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>

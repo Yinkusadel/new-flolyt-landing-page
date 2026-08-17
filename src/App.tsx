@@ -994,103 +994,6 @@ room.confidence `}<span style={{ color: 'var(--ink-4)' }}>→</span> 0.91
             </div>
           </div>
         </section>
-
-        {/* ───────────────── FOOTER CTA ───────────────── */}
-        <section className="band" id="contact">
-          <div className="wrap">
-            <div className="final dark rv">
-              <div>
-                <h2 className="d2">Start protecting the revenue you already earn</h2>
-                <p className="lede">Connect one source, let the agents run overnight, and read your first room in the morning. The free workspace never expires and never asks for a card.</p>
-                <div style={{ marginTop: '26px', display: 'flex', gap: '11px', flexWrap: 'wrap' }}>
-                  <a className="btn btn-dark btn-lg" href="#/pricing">Start for free</a>
-                  <a className="btn btn-line btn-lg" href="#/rooms">See how it works</a>
-                </div>
-              </div>
-              <form className="fform" id="cform" onSubmit={handleFormSubmit} noValidate>
-                <h3 className="d4" style={{ marginBottom: '18px' }}>Let{"’"}s get started</h3>
-                <div className="fr">
-                  <div>
-                    <label htmlFor="fn">First name</label>
-                    <input 
-                      id="fn" 
-                      placeholder="Ada" 
-                      required 
-                      value={formData.fn}
-                      onChange={(e) => setFormData({ ...formData, fn: e.target.value })}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="ln">Last name</label>
-                    <input 
-                      id="ln" 
-                      placeholder="Obi" 
-                      required 
-                      value={formData.ln}
-                      onChange={(e) => setFormData({ ...formData, ln: e.target.value })}
-                    />
-                  </div>
-                </div>
-                <div className="full">
-                  <label htmlFor="em">Work email</label>
-                  <input
-                    id="em"
-                    type="email"
-                    placeholder="ada@company.com"
-                    required
-                    aria-invalid={emailError ? 'true' : 'false'}
-                    style={emailError ? { borderColor: '#CE3F51' } : undefined}
-                    value={formData.em}
-                    onChange={(e) => {
-                      setFormData({ ...formData, em: e.target.value });
-                      if (emailError) setEmailError('');
-                    }}
-                  />
-                  {emailError && (
-                    <div style={{ color: '#CE3F51', fontSize: '12.5px', marginTop: '6px' }}>{emailError}</div>
-                  )}
-                </div>
-                <div className="fr">
-                  <div>
-                    <label htmlFor="co">Company</label>
-                    <input 
-                      id="co" 
-                      placeholder="Company" 
-                      required 
-                      value={formData.co}
-                      onChange={(e) => setFormData({ ...formData, co: e.target.value })}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="rv2">Annual revenue</label>
-                    <select 
-                      id="rv2"
-                      value={formData.rv2}
-                      onChange={(e) => setFormData({ ...formData, rv2: e.target.value })}
-                    >
-                      <option>Under $500K</option>
-                      <option>$500K – $5M</option>
-                      <option>$5M – $50M</option>
-                      <option>$50M+</option>
-                    </select>
-                  </div>
-                </div>
-                <button className="btn btn-dark" type="submit" disabled={formSubmitting || formSubmitted} style={{ width: '100%', marginTop: '6px' }}>
-                  {formSubmitted ? 'Sent' : formSubmitting ? 'Sending…' : 'Talk with our team'}
-                </button>
-                <p className="fnote">By submitting this form, you confirm you have read Flolyt{"’"}s privacy statement. We reply within one business day.</p>
-                {formError && (
-                  <div className="ok show" id="errmsg" style={{ color: '#CE3F51' }}>
-                    Something went wrong. Please try again, or email us directly.
-                  </div>
-                )}
-                <div className={`ok ${formSubmitted ? 'show' : ''}`} id="okmsg">
-                  Thanks. A member of our team will be in touch within one business day.
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
       </main>
 
       {/* ───────────────── PAGE: PRICING ───────────────── */}
@@ -1465,6 +1368,103 @@ room.confidence `}<span style={{ color: 'var(--ink-4)' }}>→</span> 0.91
           </div>
         </section>
       </main>
+
+      {/* ───────────────── FOOTER CTA ───────────────── */}
+      <section className="band" id="contact">
+        <div className="wrap">
+          <div className="final dark rv">
+            <div>
+              <h2 className="d2">Start protecting the revenue you already earn</h2>
+              <p className="lede">Connect one source, let the agents run overnight, and read your first room in the morning. The free workspace never expires and never asks for a card.</p>
+              <div style={{ marginTop: '26px', display: 'flex', gap: '11px', flexWrap: 'wrap' }}>
+                <a className="btn btn-dark btn-lg" href="#/pricing">Start for free</a>
+                <a className="btn btn-line btn-lg" href="#/rooms">See how it works</a>
+              </div>
+            </div>
+            <form className="fform" id="cform" onSubmit={handleFormSubmit} noValidate>
+              <h3 className="d4" style={{ marginBottom: '18px' }}>Let{"’"}s get started</h3>
+              <div className="fr">
+                <div>
+                  <label htmlFor="fn">First name</label>
+                  <input
+                    id="fn"
+                    placeholder="Ada"
+                    required
+                    value={formData.fn}
+                    onChange={(e) => setFormData({ ...formData, fn: e.target.value })}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="ln">Last name</label>
+                  <input
+                    id="ln"
+                    placeholder="Obi"
+                    required
+                    value={formData.ln}
+                    onChange={(e) => setFormData({ ...formData, ln: e.target.value })}
+                  />
+                </div>
+              </div>
+              <div className="full">
+                <label htmlFor="em">Work email</label>
+                <input
+                  id="em"
+                  type="email"
+                  placeholder="ada@company.com"
+                  required
+                  aria-invalid={emailError ? 'true' : 'false'}
+                  style={emailError ? { borderColor: '#CE3F51' } : undefined}
+                  value={formData.em}
+                  onChange={(e) => {
+                    setFormData({ ...formData, em: e.target.value });
+                    if (emailError) setEmailError('');
+                  }}
+                />
+                {emailError && (
+                  <div style={{ color: '#CE3F51', fontSize: '12.5px', marginTop: '6px' }}>{emailError}</div>
+                )}
+              </div>
+              <div className="fr">
+                <div>
+                  <label htmlFor="co">Company</label>
+                  <input
+                    id="co"
+                    placeholder="Company"
+                    required
+                    value={formData.co}
+                    onChange={(e) => setFormData({ ...formData, co: e.target.value })}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="rv2">Annual revenue</label>
+                  <select
+                    id="rv2"
+                    value={formData.rv2}
+                    onChange={(e) => setFormData({ ...formData, rv2: e.target.value })}
+                  >
+                    <option>Under $500K</option>
+                    <option>$500K – $5M</option>
+                    <option>$5M – $50M</option>
+                    <option>$50M+</option>
+                  </select>
+                </div>
+              </div>
+              <button className="btn btn-dark" type="submit" disabled={formSubmitting || formSubmitted} style={{ width: '100%', marginTop: '6px' }}>
+                {formSubmitted ? 'Sent' : formSubmitting ? 'Sending…' : 'Talk with our team'}
+              </button>
+              <p className="fnote">By submitting this form, you confirm you have read Flolyt{"’"}s privacy statement. We reply within one business day.</p>
+              {formError && (
+                <div className="ok show" id="errmsg" style={{ color: '#CE3F51' }}>
+                  Something went wrong. Please try again, or email us directly.
+                </div>
+              )}
+              <div className={`ok ${formSubmitted ? 'show' : ''}`} id="okmsg">
+                Thanks. A member of our team will be in touch within one business day.
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
 
       {/* ───────────────── FOOTER ───────────────── */}
       <footer>
